@@ -21,12 +21,14 @@ const path = {
     css: project_folder + '/css/',
     js: project_folder + '/js/',
     img: project_folder + '/img/',
+    font: project_folder + '/fonts/',
   },
   src: {
     html: [source_folder + '/*.html'],
     css: source_folder + '/scss/style.scss',
     js: source_folder + '/js/script.js',
     img: source_folder + '/img/*',
+    font: source_folder + '/fonts/*',
   },
   watch: {
     html: source_folder + '/**/*.html',
@@ -47,6 +49,7 @@ function server() {
     notify: false
   });
 }
+
 
 function html() {
   return src(path.src.html)
@@ -100,6 +103,21 @@ function images() {
     .pipe(browserSync.stream());
 }
 
+function font() {
+  return src(path.src.font)
+    .pipe(dest(path.build.font));
+}
+
+function libs() {
+  return src([source_folder + '/libs/*.css'])
+    .pipe(cleanCss())
+    .pipe(rename({
+      extname: '.min.css'
+    }))
+    .pipe(dest([project_folder + '/css']));
+}
+
+
 function clean() {
   return del(path.clean);
 }
@@ -125,7 +143,7 @@ const watchFiles = () => {
   watch([path.watch.img], images);
 };
 
-const build = series(clean, parallel(css, html, js, images));
+const build = series(clean, parallel(css, libs, html, font, js, images));
 const dev = parallel(build, watchFiles, server);
 
 exports.build = build;

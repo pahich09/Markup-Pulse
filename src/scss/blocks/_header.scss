@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: #ffffff;
+
+  &__logo {
+    width: 251px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__official {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+
+    span {
+      display: block;
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+
+  &__tel {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__tel {
+    display: block;
+    margin-bottom: 8px;
+  }
+}
