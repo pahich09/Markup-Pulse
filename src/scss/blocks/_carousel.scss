@@ -1,0 +1,53 @@
+.carousel {
+  padding: 100px 0;
+
+  &__wrap {
+    position: relative;
+  }
+
+  &__item > img {
+    display: block;
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  &__prev-btn, &__next-btn {
+    border: 0;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__prev-btn {
+    left: 5px;
+  }
+
+  &__next-btn {
+    right: 5px;
+  }
+}
+
+.tns-nav {
+  text-align: center;
+
+  button {
+    padding: 0;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 1px dashed $main-color;
+    margin-right: 10px;
+    background-color: transparent;
+    transition: 0.6s all;
+  }
+
+  & > &-active {
+    background-color: $main-color;
+  }
+}
