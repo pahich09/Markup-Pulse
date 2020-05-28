@@ -1,0 +1,20 @@
+.consultation {
+  padding: 100px 0 90px;
+  color: #ffffff;
+  background: url("../img/form-bg.jpg") no-repeat center center/cover;
+
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: left;
+    margin: 0 0 80px;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    font-weight: 300;
+    text-align: left;
+    margin-bottom: 36px;
+  }
+}

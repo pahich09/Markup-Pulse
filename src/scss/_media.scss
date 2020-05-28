@@ -1,0 +1,174 @@
+@media (max-width: 990px) {
+  .container {
+    width: 90%;
+  }
+  .advantage__item {
+    max-width: 210px;
+  }
+  .consultation {
+    padding: 70px 0;
+
+    &__title {
+      line-height: 46px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    &__logo {
+      margin-bottom: 10px;
+    }
+
+    &__official {
+      order: 3;
+      width: 100%;
+      text-align: left;
+      padding-left: 50px;
+    }
+
+    &__contacts {
+      margin-left: auto;
+    }
+  }
+  .promo__wrap {
+    align-items: center;
+    text-align: center;
+  }
+  .advantage {
+    padding-bottom: 30px;
+
+    &__title {
+      margin-bottom: 40px;
+    }
+
+    &__list {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__img {
+      margin-bottom: 15px;
+    }
+
+    &__item {
+      max-width: 40%;
+      margin-bottom: 20px;
+
+      &:first-child {
+        margin-right: 20px;
+      }
+    }
+  }
+  .consultation {
+    &__title {
+      line-height: 40px;
+      font-size: 30px;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+
+    &__logo {
+      margin-bottom: 10px;
+    }
+
+    &__official {
+      order: 0;
+      width: 100%;
+      text-align: center;
+      padding-left: 0;
+      margin-bottom: 10px;
+    }
+
+    &__contacts {
+      margin: 0;
+    }
+  }
+  .promo {
+    padding-bottom: 50px;
+
+    &__wrap {
+      padding-top: 50px;
+    }
+
+    &__title {
+      font-size: 30px;
+    }
+
+    &__subtitle {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+
+    &__icons {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+
+    &__icon {
+      width: 50%;
+    }
+
+    &__icon:not(:last-child) {
+      margin-right: 0;
+    }
+
+    &__icon:last-child {
+      margin-top: 20px;
+    }
+
+    &__link * {
+      display: block;
+      line-height: 24px;
+    }
+  }
+  .btn_main {
+    padding: 0 20px;
+    margin-bottom: 10px;
+  }
+  .advantage {
+    &__title {
+      font-size: 24px;
+    }
+
+    &__item {
+      max-width: 100%;
+    }
+
+    &__item:first-child {
+      margin-right: 0;
+    }
+  }
+  .consultation {
+    padding-top: 40px;
+    &__title {
+      font-size: 20px;
+      line-height: 28px;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    &__subtitle{
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+
+  .feed-form_main{
+    max-width: 350px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .btn_submit{
+    padding: 0 15px;
+  }
+}
