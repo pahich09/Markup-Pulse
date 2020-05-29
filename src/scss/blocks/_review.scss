@@ -1,0 +1,35 @@
+.review {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 35px 0;
+
+  &__img {
+    display: block;
+    width: 169px;
+    height: 169px;
+    margin-right: 62px;
+  }
+  &__author{
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 700;
+    text-align: left;
+    color: #0d0d0d;
+    margin-bottom: 10px;
+  }
+  &__subtitle{
+    display: block;
+    font-size: 14px;
+    font-weight: 300;
+    color: #646464;
+    margin-bottom: 19px;
+  }
+  &__text{
+    margin: 0;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #0d0d0d;
+  }
+}

@@ -1,0 +1,64 @@
+.footer {
+  position: relative;
+
+  &__map {
+    height: 630px;
+  }
+
+  &__info {
+    padding: 50px 68px 60px;
+    width: 460px;
+    min-height: 270px;
+    position: absolute;
+    background-color: $main-color;
+    color: #ffffff;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  &__address {
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 20px;
+    margin-bottom: 36px;
+  }
+
+  &__tel {
+    display: block;
+    margin-bottom: 38px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+
+  .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 15px;
+      width: 50px;
+      height: 50px;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      color: #ffffff;
+
+      &:hover {
+        background-color: #787676;
+        color: $main-color;
+      }
+    }
+
+  }
+}
