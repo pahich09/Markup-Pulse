@@ -49,3 +49,47 @@ tabs.forEach(tab => {
     document.getElementById(this.dataset.type).classList.add('catalog__content_active');
   });
 });
+
+const consultBtns = document.querySelectorAll('[data-target="consultation"]');
+const orderBtns = document.querySelectorAll('[data-target = "order"]');
+const overlay = document.querySelector('.overlay');
+const modals = document.querySelectorAll('.modal');
+const modalConsult = document.querySelector('.modal_consultation');
+const modalOrder = document.querySelector('.modal_order');
+const close = document.querySelectorAll('.modal__close');
+const orderTitle = document.querySelector('.modal_order .modal__subtitle');
+
+
+function closeModal() {
+  overlay.classList.remove('overlay_open');
+  modals.forEach(el => {
+    el.classList.remove('modal_open');
+  });
+}
+
+function openModal(targetModal) {
+  overlay.classList.add('overlay_open');
+  targetModal.classList.add('modal_open');
+}
+
+document.addEventListener('keydown', function (event) {
+  event.code === 'Escape' && closeModal();
+});
+
+close.forEach(elem => {
+  elem.addEventListener('click', closeModal);
+});
+
+consultBtns.forEach(btn => {
+  btn.addEventListener('click', openModal.bind(null, modalConsult));
+});
+
+orderBtns.forEach(btn => {
+  btn.addEventListener('click', function () {
+    openModal(modalOrder);
+    const currentOrder = btn.closest('.product')
+      .querySelector('.product__title').textContent;
+    orderTitle.textContent = currentOrder;
+  });
+});
+

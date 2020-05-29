@@ -306,20 +306,37 @@
     &__map {
       height: 350px;
     }
-    &__info{
+
+    &__info {
       position: static;
       transform: translateX(0);
       width: 100%;
       min-height: auto;
       padding: 30px 20px;
     }
-    &__address{
+
+    &__address {
       font-size: 16px;
       margin-bottom: 20px;
     }
-    &__tel{
+
+    &__tel {
       margin-bottom: 20px;
     }
 
+  }
+  .modal {
+    width: 290px;
+    padding: 20px 15px;
+    min-height: 350px;
+
+    &__close {
+      right: 8px;
+      top: 1px;
+    }
+  }
+
+  .feed-form_modal {
+    width: 100%;
   }
 }
