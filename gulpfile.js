@@ -2,6 +2,7 @@ const {src, dest, watch, parallel, series, task} = require('gulp');
 const browserSync = require('browser-sync').create();
 const fileInclude = require('gulp-file-include');
 const del = require('del');
+const htmlmin = require('gulp-htmlmin');
 const scss = require('gulp-sass');
 const autoPrefix = require('gulp-autoprefixer');
 const groupMedia = require('gulp-group-css-media-queries');
@@ -54,6 +55,7 @@ function server() {
 function html() {
   return src(path.src.html)
     .pipe(fileInclude())
+    .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(dest(path.build.html))
     .pipe(browserSync.stream());
 }
@@ -108,15 +110,6 @@ function font() {
     .pipe(dest(path.build.font));
 }
 
-function libs() {
-  return src([source_folder + '/libs/*.css'])
-    .pipe(cleanCss())
-    .pipe(rename({
-      extname: '.min.css'
-    }))
-    .pipe(dest([project_folder + '/css']));
-}
-
 
 function clean() {
   return del(path.clean);
@@ -143,7 +136,7 @@ const watchFiles = () => {
   watch([path.watch.img], images);
 };
 
-const build = series(clean, parallel(css, libs, html, font, js, images));
+const build = series(clean, parallel(css, html, font, js, images));
 const dev = parallel(build, watchFiles, server);
 
 exports.build = build;

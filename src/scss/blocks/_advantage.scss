@@ -14,27 +14,36 @@
     display: flex;
     justify-content: space-between;
   }
-  &__item{
+
+  &__item {
     max-width: 245px;
   }
-  &__img{
+
+  &__img {
     width: 70px;
     margin-bottom: 38px;
   }
-  &__subtitle{
+
+  &__subtitle {
     height: 16px;
     font-size: 18px;
     font-weight: 700;
     margin: 0 0 26px;
   }
-  &__text{
+
+  &__text {
     margin: 0;
     font-size: 14px;
     font-weight: 300;
     line-height: 17px;
-    span{
+
+    span {
       text-transform: uppercase;
       color: #ff0000;
     }
   }
+  .animate__animated{
+    animation-iteration-count: infinite;
+  }
 }
+

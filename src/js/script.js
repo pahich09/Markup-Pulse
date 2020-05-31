@@ -15,6 +15,8 @@ const slider = tns({
     },
   }
 });
+
+
 document.querySelector('.carousel__prev-btn')
   .addEventListener('click', function () {
     slider.goTo('prev');
@@ -58,7 +60,8 @@ const modalConsult = document.querySelector('.modal_consultation');
 const modalOrder = document.querySelector('.modal_order');
 const close = document.querySelectorAll('.modal__close');
 const orderTitle = document.querySelector('.modal_order .modal__subtitle');
-
+const up = document.querySelector('.up');
+const review = document.querySelectorAll('.review');
 
 function closeModal() {
   overlay.classList.remove('overlay_open');
@@ -93,3 +96,24 @@ orderBtns.forEach(btn => {
   });
 });
 
+up.addEventListener('click', function () {
+  const interval = setInterval(() => {
+    if (window.pageYOffset > 0) {
+      window.scrollTo(0, window.pageYOffset - 50);
+    } else clearInterval(interval);
+  }, 5);
+});
+
+
+document.addEventListener('scroll', function (e) {
+  window.pageYOffset > 1000
+    ? up.classList.add('up_show')
+    : up.classList.remove('up_show');
+  review.forEach(el => {
+    if (window.pageYOffset + el.clientHeight*2 > el.offsetTop) {
+      el.classList.add('animate__zoomIn');
+    } else {
+      el.classList.remove('animate__zoomIn');
+    }
+  });
+});
