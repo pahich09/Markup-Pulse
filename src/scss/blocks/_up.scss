@@ -11,11 +11,15 @@
   transition: 0.6s opacity;
 
   &:hover {
-   opacity: 1;
+    opacity: 1;
     cursor: pointer;
   }
 
   &_show {
     display: block;
   }
+}
+
+img[alt="www.000webhost.com"] {
+  display: none;
 }

@@ -98,9 +98,11 @@ orderBtns.forEach(btn => {
 
 up.addEventListener('click', function () {
   const interval = setInterval(() => {
-    if (window.pageYOffset > 0) {
-      window.scrollTo(0, window.pageYOffset - 50);
-    } else clearInterval(interval);
+    if (document.documentElement.scrollTop > 0) {
+      document.documentElement.scrollTop = window.pageYOffset - 20;
+    } else {
+      clearInterval(interval);
+    }
   }, 5);
 });
 
@@ -110,7 +112,7 @@ document.addEventListener('scroll', function (e) {
     ? up.classList.add('up_show')
     : up.classList.remove('up_show');
   review.forEach(el => {
-    if (window.pageYOffset + el.clientHeight*2 > el.offsetTop) {
+    if (window.pageYOffset + el.parentElement.clientHeight  > el.offsetTop) {
       el.classList.add('animate__zoomIn');
     } else {
       el.classList.remove('animate__zoomIn');
